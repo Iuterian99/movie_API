@@ -43,7 +43,7 @@ async function fetchMovies() {
     elMovieList.innerHTML = "<img src='./images/Loading.svg' alt = 'spinner' />";
 
     const response = await fetch(
-      "http://www.omdbapi.com/?apikey=d83224c7&s=" + nameOfMovie + "&page=" + page
+      "https://www.omdbapi.com/?apikey=d83224c7&s=" + nameOfMovie + "&page=" + page
     );
 
     const data = await response.json();
