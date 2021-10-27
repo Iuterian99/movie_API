@@ -1,6 +1,6 @@
 const elMovieList = document.querySelector(".movie-list");
 const elMovieTemplate = document.querySelector("#movie__template").content;
-const elInput = document.querySelector(".form-control");
+const elInputName = document.querySelector(".form-name");
 const elSubmitBtn = document.querySelector(".submit-btn");
 const elPrevBtn = document.querySelector(".prev-btn");
 const elNextBtn = document.querySelector(".next-btn");
@@ -11,7 +11,7 @@ page = 1;
 nameOfMovie = "shazam"
 elSubmitBtn.addEventListener("click", (evt) => {
   evt.preventDefault();
-  nameOfMovie = elInput.value;
+  nameOfMovie = elInputName.value;
   fetchMovies();
 })
 
@@ -70,12 +70,12 @@ async function fetchMovies() {
   }
 } 
 
-elNextBtn.addEventListener("click", (evt) => {
+elNextBtn.addEventListener("click", () => {
   page++;
   elFirstPage.textContent = page;
   fetchMovies();
 })
-elPrevBtn.addEventListener("click", (evt) => {
+elPrevBtn.addEventListener("click", () => {
   page--;
   elFirstPage.textContent = page;
   fetchMovies();
